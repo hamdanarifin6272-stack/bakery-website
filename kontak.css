@@ -1,0 +1,984 @@
+
+/* 1. PENGATURAN DASAR */
+
+:root {
+  --brown: #a95428;
+  --brown-dark: #87401f;
+  --brown-light: #bd805e;
+  --cream: #fff8f1;
+  --text: #171513;
+  --muted: #85807b;
+  --border: #e8e2dd;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* ==========================================
+   2. HEADER DAN LOGO
+========================================== */
+
+.navbar {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 82px;
+  padding: 12px 5.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.025);
+}
+
+.logo {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 95px;
+  color: #593a2c;
+  line-height: 1;
+}
+
+.logo-decoration {
+  height: 10px;
+  font-size: 18px;
+  transform: rotate(-25deg);
+}
+
+.logo-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 23px;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -1.2px;
+}
+
+.logo-line {
+  width: 43px;
+  height: 3px;
+  margin-top: 3px;
+  border-radius: 5px;
+  background: #593a2c;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+  padding: 9px 12px;
+  color: #89827e;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  bottom: 2px;
+  left: 12px;
+  height: 2px;
+  border-radius: 5px;
+  background: var(--brown);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--brown);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+
+/* ==========================================
+   3. BANNER HUBUNGI KAMI
+========================================== */
+
+.contact-hero {
+  position: relative;
+  min-height: 410px;
+  padding: 48px 20px 190px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  isolation: isolate;
+  background-color: #f8f5f1;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(255, 255, 255, 0.88) 35%,
+      rgba(255, 255, 255, 0.18) 100%
+    ),
+    url("https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1800&q=90");
+  background-size: cover;
+  background-position: center, center 70%;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 650px;
+}
+
+.hero-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--brown);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero-content h1 {
+  color: #090909;
+  font-size: clamp(36px, 4.5vw, 48px);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -1.5px;
+}
+
+.hero-content > p {
+  margin-top: 14px;
+  color: #5d5854;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+
+/* ==========================================
+   4. SUSUNAN KONTEN UTAMA
+========================================== */
+
+.contact-container {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  max-width: 1200px;
+  margin: 58px auto 65px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr)
+                         minmax(290px, 0.9fr);
+  align-items: center;
+  gap: 26px;
+}
+
+
+/* ==========================================
+   5. KARTU FORMULIR
+========================================== */
+
+.contact-form-card {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 27px 22px 28px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(68, 43, 25, 0.035);
+}
+
+.form-heading {
+  margin-bottom: 21px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--brown);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.contact-form-card h2 {
+  margin: 0 0 8px;
+  color: #141210;
+  font-size: 26px;
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: -0.7px;
+}
+
+.description {
+  max-width: 540px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.75;
+}
+
+
+/* ==========================================
+   6. FORMULIR DAN KOLOM INPUT
+========================================== */
+
+#contact-form {
+  width: 100%;
+  min-width: 0;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 20px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 7px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.form-group label {
+  display: block;
+  color: #24211e;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+.form-group input,
+.form-group textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #e5e1dd;
+  border-radius: 13px;
+  outline: none;
+  background: #ffffff;
+  color: #27221e;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input {
+  height: 44px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #99918a;
+  opacity: 1;
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: #cdb6a7;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--brown);
+  background: #fffdfa;
+  box-shadow: 0 0 0 3px rgba(169, 84, 40, 0.09);
+}
+
+.form-group textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.message-group {
+  width: 100%;
+  margin-top: 16px;
+}
+
+
+/* ==========================================
+   7. RINGKASAN PESANAN
+========================================== */
+
+.order-summary[hidden] {
+  display: none !important;
+}
+
+.order-summary {
+  width: 100%;
+  margin-top: 20px;
+  padding: 17px;
+  border: 1px solid #ead8ca;
+  border-radius: 15px;
+  background: #fff8f1;
+}
+
+.summary-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 14px;
+}
+
+.summary-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border-radius: 12px;
+  background: #f1dfd1;
+  font-size: 20px;
+}
+
+.summary-heading h3 {
+  color: #35251b;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.summary-heading p {
+  color: #85776d;
+  font-size: 11px;
+}
+
+#order-items {
+  display: grid;
+  gap: 8px;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid #eadfd6;
+  font-size: 12px;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-item-name {
+  color: #4b3c31;
+}
+
+.order-item-price {
+  color: #35251b;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #ddc6b6;
+  font-size: 13px;
+}
+
+.summary-total strong {
+  color: var(--brown);
+}
+
+
+/* ==========================================
+   8. TOMBOL KIRIM
+========================================== */
+
+.form-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 13px;
+  color: #8a827c;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-width: 138px;
+  min-height: 42px;
+  margin: 16px 0 0 auto;
+  padding: 10px 24px;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  background: var(--brown);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(169, 84, 40, 0.12);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+  background: var(--brown-dark);
+  box-shadow: 0 8px 18px rgba(169, 84, 40, 0.2);
+  transform: translateY(-2px);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+.submit-button:focus-visible {
+  outline: 3px solid rgba(169, 84, 40, 0.3);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================
+   9. PANEL INFORMASI TOKO
+========================================== */
+
+.contact-info {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 26px 22px 24px;
+  overflow: hidden;
+  border-radius: 23px;
+  background: var(--brown);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(114, 55, 25, 0.1);
+}
+
+.info-heading {
+  position: relative;
+  z-index: 1;
+}
+
+.info-kicker {
+  display: block;
+  margin-bottom: 7px;
+  color: #f8d8c4;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.info-heading h2 {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.info-heading > p {
+  margin-bottom: 17px;
+  color: #fff0e6;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+
+/* Kartu informasi */
+
+.info-list {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 14px 12px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: var(--brown-light);
+  color: #ffffff;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+a.info-item:hover {
+  background: #c58a68;
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 40px;
+  width: 40px;
+  min-height: 40px;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.info-item > div:not(.info-icon) {
+  flex: 1;
+  min-width: 0;
+}
+
+.info-item h3 {
+  margin-bottom: 3px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.info-item p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.info-arrow {
+  color: #fff2e9;
+  font-size: 17px;
+}
+
+
+/* Sosial media */
+
+.social-area {
+  position: relative;
+  z-index: 1;
+  margin-top: 23px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.social-area > p {
+  margin-bottom: 9px;
+  color: #fff0e6;
+  font-size: 11px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+}
+
+.info-decoration {
+  position: absolute;
+  right: -14px;
+  bottom: -48px;
+  color: rgba(255, 255, 255, 0.07);
+  font-family: Georgia, serif;
+  font-size: 155px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ==========================================
+   10. FOOTER
+========================================== */
+
+.footer {
+  width: 100%;
+  padding: 47px 4.2% 20px;
+  background: var(--brown);
+  color: #ffffff;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr)
+                         minmax(100px, 0.65fr)
+                         minmax(180px, 1fr);
+  gap: 38px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 34px;
+}
+
+.footer-content > div {
+  min-width: 0;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.footer-logo-mark {
+  font-size: 32px;
+}
+
+.footer-brand > p {
+  max-width: 330px;
+  margin-bottom: 18px;
+  color: #fff0e6;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-content h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.footer-content p,
+.footer-content > div > a:not(.footer-logo) {
+  color: #fff0e6;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.footer-navigation a {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-navigation a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+.footer-contact p span {
+  flex: 0 0 17px;
+  color: #ffffff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.footer-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.copyright {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff0e6;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* ==========================================
+   11. RESPONSIVE TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: minmax(0, 1.2fr)
+                           minmax(245px, 0.85fr);
+    gap: 18px;
+  }
+
+  .contact-form-card {
+    padding: 23px 18px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 23px;
+  }
+
+  .contact-info {
+    padding: 22px 16px;
+  }
+
+  .info-item {
+    gap: 8px;
+    padding: 12px 9px;
+  }
+
+  .info-icon {
+    flex-basis: 34px;
+    width: 34px;
+    font-size: 25px;
+  }
+
+  .footer-content {
+    gap: 24px;
+  }
+}
+
+/* ==========================================
+   12. RESPONSIVE HP
+========================================== */
+
+@media (max-width: 680px) {
+  .navbar {
+    min-height: 75px;
+    padding: 12px 5%;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .logo {
+    min-width: 85px;
+  }
+
+  .logo-name {
+    font-size: 21px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .nav-links a {
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+
+  .contact-hero {
+    min-height: 320px;
+    padding: 38px 15px 145px;
+    background-position: center, center 70%;
+  }
+
+  .hero-label {
+    font-size: 9px;
+    letter-spacing: 1.4px;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+    letter-spacing: -0.7px;
+  }
+
+  .hero-content > p {
+    margin-top: 11px;
+    font-size: 15px;
+  }
+
+  .desktop-break {
+    display: none;
+  }
+
+  .contact-container {
+    width: 92%;
+    margin: 28px auto 38px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .contact-form-card {
+    padding: 22px 17px;
+    border-radius: 16px;
+  }
+
+  .form-heading {
+    margin-bottom: 20px;
+  }
+
+  .section-label {
+    font-size: 9px;
+  }
+
+  .contact-form-card h2 {
+    font-size: 23px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    height: 46px;
+  }
+
+  .form-group textarea {
+    min-height: 125px;
+  }
+
+  .message-group {
+    margin-top: 16px;
+  }
+
+  .submit-button {
+    width: 100%;
+    min-height: 45px;
+  }
+
+  .contact-info {
+    padding: 25px 20px;
+    border-radius: 20px;
+  }
+
+  .info-heading h2 {
+    font-size: 20px;
+  }
+
+  .info-item {
+    gap: 12px;
+    padding: 14px 12px;
+  }
+
+  .info-icon {
+    flex-basis: 40px;
+    width: 40px;
+    font-size: 27px;
+  }
+
+  .footer {
+    padding: 35px 6% 18px;
+  }
+
+  .footer-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+    padding-bottom: 27px;
+  }
+
+  .footer-logo {
+    font-size: 26px;
+  }
+
+  .footer-content h3 {
+    margin-bottom: 10px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}

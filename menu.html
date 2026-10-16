@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Bakery</title>
+
+    <!-- CSS khusus halaman menu -->
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html" class="logo">
+            <span class="logo-decoration">♧</span>
+            <span class="logo-name">Bakery</span>
+            <span class="logo-line"></span>
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Beranda</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+    </header>
+
+    <!-- BANNER MENU -->
+    <section class="menu-hero">
+        <div class="hero-content">
+            <h1>Menu Kami</h1>
+            <p>
+                Dari roti yang lembut hingga kue yang menggoda,
+                semua dibuat dari bahan terbaik.
+            </p>
+        </div>
+    </section>
+
+    <!-- DAFTAR MENU DAN KERANJANG -->
+    <main class="shop-container">
+
+        <!-- DAFTAR PRODUK -->
+        <section class="product-grid">
+
+            <!-- PRODUK 1 -->
+            <article class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=500&q=85"
+                    alt="Roti Kering"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+                    <h3>Roti Kering</h3>
+                    <p class="product-price">Rp 10.000</p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart(1)"
+                    >
+                        🛒 Tambah
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUK 2 -->
+            <article class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1530610476181-d83430b64dcd?auto=format&fit=crop&w=500&q=85"
+                    alt="Roti Lilit"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+                    <h3>Roti Lilit</h3>
+                    <p class="product-price">Rp 15.000</p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart(2)"
+                    >
+                        🛒 Tambah
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUK 3 -->
+            <article class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=500&q=85"
+                    alt="Roti Selai"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+                    <h3>Roti Selai</h3>
+                    <p class="product-price">Rp 10.000</p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart(3)"
+                    >
+                        🛒 Tambah
+                    </button>
+                </div>
+            </article>
+
+            <!-- PRODUK 4 -->
+            <article class="product-card">
+                <img
+                    src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=500&q=85"
+                    alt="Roti Selai Original"
+                    class="product-image"
+                >
+
+                <div class="product-info">
+                    <h3>Roti Selai Original</h3>
+                    <p class="product-price">Rp 8.000</p>
+
+                    <button
+                        class="add-button"
+                        onclick="addToCart(4)"
+                    >
+                        🛒 Tambah
+                    </button>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- KERANJANG PESANAN -->
+        <aside class="cart-panel">
+
+            <h2>
+                Keranjang Pesanan
+                <span id="cart-count">(0)</span>
+            </h2>
+
+            <div id="cart-items">
+                <p class="empty-cart">
+                    Keranjang masih kosong.
+                    Silakan pilih roti favoritmu!
+                </p>
+            </div>
+
+            <div class="cart-total">
+                <strong>Total Harga</strong>
+                <strong id="cart-total">Rp 0</strong>
+            </div>
+
+            <button
+                class="checkout-button"
+                onclick="checkout()"
+            >
+                🛒 Buat Pesanan
+            </button>
+
+        </aside>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+
+            <div class="footer-brand">
+                <div class="footer-logo">♧ Bakery</div>
+                <h2>Bakery</h2>
+                <p>
+                    Nikmati roti lezat yang dibuat dengan sepenuh
+                    hati untuk menemani setiap harimu.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Navigasi</h3>
+                <a href="index.html">Beranda</a>
+                <a href="menu.html">Menu</a>
+                <a href="kontak.html">Kontak</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Hubungi Kami</h3>
+                <p>⌖ Jember, Jawa Timur</p>
+                <p>☎ 08xx-xxxx-xxxx</p>
+                <p>✉ bakery@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Bakery. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT KERANJANG -->
+    <script src="js/menu.js"></script>
+
+</body>
+</html>

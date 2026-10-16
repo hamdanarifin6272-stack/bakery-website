@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hubungi Kami | Bakery</title>
+
+  <!-- CSS khusus halaman kontak -->
+  <link rel="stylesheet" href="css/kontak.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="Bakery - Beranda">
+      <span class="logo-decoration">♧</span>
+      <span class="logo-name">Bakery</span>
+      <span class="logo-line"></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Beranda</a>
+      <a href="menu.html">Menu</a>
+      <a href="kontak.html" class="active">Kontak</a>
+    </nav>
+  </header>
+
+
+  <!-- BANNER -->
+  <section class="contact-hero">
+    <div class="hero-content">
+      <span class="hero-label">KAMI SENANG MENDENGAR DARIMU</span>
+      <h1>Hubungi Kami</h1>
+      <p>
+        Kami siap melayani dan menjawab<br class="desktop-break">
+        pertanyaan Anda.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- FORMULIR DAN INFORMASI TOKO -->
+  <main class="contact-container">
+
+    <!-- FORMULIR -->
+    <section class="contact-form-card">
+
+      <div class="form-heading">
+        <span class="section-label">ADA YANG BISA KAMI BANTU?</span>
+        <h2>Kirim Pesan kepada Kami</h2>
+        <p class="description">
+          Punya pertanyaan tentang produk kami atau ingin memesan
+          kue khusus? Isi formulir di bawah ini. Kami akan dengan
+          senang hati membantu!
+        </p>
+      </div>
+
+      <form id="contact-form">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+            <label for="firstName">Nama Depan</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              placeholder="Masukkan nama depan"
+              autocomplete="given-name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Nama Belakang</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Masukkan nama belakang"
+              autocomplete="family-name"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Masukkan email kamu"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Nomor Telepon / WhatsApp</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Contoh: 08xxxxxxxxxx"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+        </div>
+
+        <!-- RINGKASAN PESANAN DARI HALAMAN MENU -->
+        <div id="order-summary" class="order-summary" hidden>
+          <div class="summary-heading">
+            <span class="summary-icon">🛒</span>
+            <div>
+              <h3>Ringkasan Pesanan</h3>
+              <p>Periksa kembali roti yang kamu pilih.</p>
+            </div>
+          </div>
+
+          <div id="order-items"></div>
+
+          <div class="summary-total">
+            <span>Total Pesanan</span>
+            <strong id="order-total">Rp 0</strong>
+          </div>
+        </div>
+
+        <!-- PESAN -->
+        <div class="form-group message-group">
+          <label for="message">Pesan</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Tuliskan pesan atau detail pesanan kamu..."
+            required
+          ></textarea>
+        </div>
+
+        <p class="form-note">
+          <span>🔒</span>
+          Periksa kembali data sebelum mengirim pesanan.
+        </p>
+
+        <button type="submit" class="submit-button">
+          <span>Kirim Pesan</span>
+          <span aria-hidden="true">→</span>
+        </button>
+
+      </form>
+    </section>
+
+
+    <!-- PANEL INFORMASI -->
+    <aside class="contact-info">
+
+      <div class="info-heading">
+        <span class="info-kicker">BAKERY CUSTOMER CARE</span>
+        <h2>Kami Siap Membantu!</h2>
+        <p>
+          Ada pertanyaan, ingin memesan roti, atau sekadar menyapa?
+          Kami senang mendengar kabar darimu.
+        </p>
+      </div>
+
+      <div class="info-list">
+
+        <div class="info-item">
+          <div class="info-icon" aria-hidden="true">◷</div>
+          <div>
+            <h3>Jam Operasional</h3>
+            <p>Setiap hari, 08.00–20.00 WIB</p>
+          </div>
+        </div>
+
+        <a
+          class="info-item"
+          id="contact-whatsapp"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div class="info-icon" aria-hidden="true">☏</div>
+          <div>
+            <h3>SMS / WhatsApp</h3>
+            <p>Hubungi kami melalui WhatsApp</p>
+          </div>
+          <span class="info-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a
+          class="info-item"
+          href="mailto:bakery@gmail.com"
+        >
+          <div class="info-icon" aria-hidden="true">✉</div>
+          <div>
+            <h3>Email</h3>
+            <p>bakery@gmail.com</p>
+          </div>
+          <span class="info-arrow" aria-hidden="true">↗</span>
+        </a>
+
+      </div>
+
+      <div class="social-area">
+        <p>Ikuti Perjalanan Manis Kami</p>
+
+        <div class="social-links">
+          <a href="#" aria-label="TikTok">♪</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+
+      <div class="info-decoration" aria-hidden="true">♡</div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-content">
+
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="footer-logo-mark">♧</span>
+          <span>Bakery</span>
+        </a>
+
+        <p>
+          Nikmati roti lezat yang dibuat dengan sepenuh hati
+          untuk menemani setiap harimu.
+        </p>
+
+        <div class="footer-socials">
+          <a href="#" aria-label="TikTok">♪</a>
+          <a href="#" aria-label="X">𝕏</a>
+          <a href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+
+
+      <div class="footer-navigation">
+        <h3>Navigasi</h3>
+        <a href="index.html">Beranda</a>
+        <a href="menu.html">Menu</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+
+
+      <div class="footer-contact">
+        <h3>Hubungi Kami</h3>
+
+        <p>
+          <span aria-hidden="true">⌖</span>
+          Jember, Jawa Timur
+        </p>
+
+        <p>
+          <span aria-hidden="true">♧</span>
+          Hubungi melalui WhatsApp
+        </p>
+
+        <p>
+          <span aria-hidden="true">✉</span>
+          bakery@gmail.com
+        </p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Bakery. Hak cipta dilindungi.
+    </div>
+
+  </footer>
+
+
+  <!-- JavaScript khusus halaman kontak -->
+  <script src="js/kontak.js"></script>
+
+</body>
+</html>
