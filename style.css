@@ -529,3 +529,48 @@ a {
     color: #A66B45;
     transition: color 0.2s ease;
 }
+
+
+/* PERBAIKAN KHUSUS LAYAR HP */
+@media screen and (max-width: 768px) {
+    .about {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px !important;
+        min-height: auto !important;
+        height: auto !important;
+        padding: 48px 6% !important;
+        align-items: center;
+    }
+
+    .about-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0;
+    }
+
+    .about-image {
+        width: 100% !important;
+        min-width: 0;
+        min-height: 0 !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-image img {
+        display: block;
+        width: 100% !important;
+        max-width: 600px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        object-fit: contain;
+        transform: scale(1.08) !important;
+        transform-origin: center;
+        border-radius: 0 !important;
+    }
+}
+
