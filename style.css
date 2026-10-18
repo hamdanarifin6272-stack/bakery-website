@@ -195,10 +195,19 @@ a {
     font-size: 14px;
 }
 
+
+/* GAMBAR TENTANG KAMI - BENTUK ORGANIK SEPERTI AWAN */
 .about-image img {
-    height: 340px;
-    border-radius: 12px;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+
+    /* Membentuk tepi gambar seperti awan */
+    border-radius: 42% 58% 38% 62% / 43% 35% 65% 57%;
+
+    display: block;
 }
+
 
 
 /* ========================================
