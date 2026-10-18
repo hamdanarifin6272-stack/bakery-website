@@ -1,6 +1,7 @@
 
 /* ========================================
    1. PENGATURAN DASAR
+
 ======================================== */
 
 * {
@@ -531,46 +532,72 @@ a {
 }
 
 
-/* PERBAIKAN KHUSUS LAYAR HP */
+
+/* PERBAIKAN BAGIAN TENTANG KAMI */
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+    overflow: hidden;
+}
+
+.about-content {
+    min-width: 0;
+}
+
+.about-image {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.about-image img {
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    object-fit: contain;
+    transform: none;
+    border-radius: 0;
+}
+
+/* KHUSUS HP DAN LAYAR KECIL */
 @media screen and (max-width: 768px) {
     .about {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) !important;
-        gap: 24px !important;
-        min-height: auto !important;
-        height: auto !important;
-        padding: 48px 6% !important;
-        align-items: center;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: 48px 20px;
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
     }
 
     .about-content {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-width: 0;
+        width: 100%;
+        max-width: 100%;
     }
 
     .about-image {
-        width: 100% !important;
-        min-width: 0;
-        min-height: 0 !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        padding: 0 !important;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
     }
 
     .about-image img {
-        display: block;
-        width: 100% !important;
-        max-width: 600px !important;
-        height: auto !important;
-        margin: 0 auto !important;
-        object-fit: contain;
-        transform: scale(1.08) !important;
-        transform-origin: center;
-        border-radius: 0 !important;
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        transform: none;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 }
+
 
