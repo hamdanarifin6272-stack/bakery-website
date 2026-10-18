@@ -197,21 +197,27 @@ a {
 
 
 
+
 .about-image {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    min-width: 0;
+    overflow: visible;
 }
 
 .about-image img {
     display: block;
     width: 100%;
-    max-width: 650px;
+    max-width: none;
     height: auto;
     object-fit: contain;
     border-radius: 0;
+    transform: scale(1.45);
+    transform-origin: center;
 }
+
 
 
 
