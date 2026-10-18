@@ -196,12 +196,23 @@ a {
 }
 
 
-.about-image img {
+
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: auto;
-    display: block;
-    object-fit: contain;
 }
+
+.about-image img {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
 
 
 
